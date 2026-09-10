@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>个人简历 — 姓名</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">姓名</a>
+      <nav class="nav" id="nav">
+        <a href="#about">关于</a>
+        <a href="#skills">技能</a>
+        <a href="#experience">经历</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <button id="nav-toggle" class="nav-toggle" aria-label="切换导航">☰</button>
+    </div>
+    <div class="progress" id="progress"></div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-left reveal">
+        <div class="avatar" aria-hidden="true"></div>
+        <h1>你好，我是 <span class="accent">姓名</span></h1>
+        <p class="lead">前端工程师 / 设计爱好者 — 擅长构建有表现力且可访问的 Web 体验。</p>
+        <p class="meta">
+          城市 · 可远程 · 工作年限 5 年
+        </p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#projects">查看作品</a>
+          <a class="btn" href="#contact">联系我</a>
+        </div>
+      </div>
+      <div class="hero-right reveal">
+        <div class="card intro-card">
+          <h3>摘要</h3>
+          <p>我专注于使用现代前端技术（HTML/CSS/JS/React/Vue）打造高性能、响应式且可访问的网页应用。喜欢在细节处打磨动效与交互。</p>
+        </div>
+        <ul class="quick-list">
+          <li><strong>邮件</strong><span>you@example.com</span></li>
+          <li><strong>电话</strong><span>+86 138 0000 0000</span></li>
+          <li><strong>地址</strong><span>北京，中国</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" class="container section reveal">
+      <h2 class="section-title">关于我</h2>
+      <div class="about-grid">
+        <div>
+          <p>我有多年 Web 开发经验，热衷于将设计与工程结合，关注细节与性能优化。对用户体验有敏锐感知，喜欢通过交互动效提升可用性。</p>
+          <p>在团队中担任过前端负责人，负责项目架构、组件库建设与性能分析。</p>
+        </div>
+        <div>
+          <h4>核心能力</h4>
+          <ul class="capabilities">
+            <li>现代前端（HTML/CSS/JavaScript、TypeScript）</li>
+            <li>框架：React / Vue</li>
+            <li>可访问性（a11y）与响应式设计</li>
+            <li>性能优化与工程化（Webpack/Vite）</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="container section reveal">
+      <h2 class="section-title">技能特长</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <h4>HTML / CSS</h4>
+          <div class="bar"><span style="--value:95%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>JavaScript / TypeScript</h4>
+          <div class="bar"><span style="--value:90%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>React / Vue</h4>
+          <div class="bar"><span style="--value:85%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>UI / 动效设计</h4>
+          <div class="bar"><span style="--value:80%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="container section reveal">
+      <h2 class="section-title">工作经历</h2>
+      <ol class="timeline">
+        <li>
+          <div class="time">2022 - 至今</div>
+          <div class="body">
+            <h4>高级前端工程师 — 公司名称</h4>
+            <p>负责核心产品的前端架构、性能优化与组件库建设，提升页面加载速度与开发效率。</p>
+          </div>
+        </li>
+        <li>
+          <div class="time">2018 - 2022</div>
+          <div class="body">
+            <h4>前端工程师 — 公司名称</h4>
+            <p>参与多个 Web 应用项目，负责交互实现、可访问性改进与跨浏览器兼容性。</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="projects" class="container section reveal">
+      <h2 class="section-title">项目展示</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-media" aria-hidden="true"></div>
+          <div class="project-content">
+            <h3>项目名称 A</h3>
+            <p class="muted">单页应用 / React / Vite</p>
+            <p>一个注重交互与性能的项目，包含可复用组件与无障碍优化。</p>
+            <div class="project-tags">
+              <span>React</span><span>Vite</span><span>CSS</span>
+            </div>
+            <div class="project-actions">
+              <a class="btn" href="#">演示</a>
+              <a class="btn" href="#">源码</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-media" aria-hidden="true"></div>
+          <div class="project-content">
+            <h3>项目名称 B</h3>
+            <p class="muted">响应式网站 / Vue / Nuxt</p>
+            <p>面向多终端的企业网站，包含复杂表单与动画交互。</p>
+            <div class="project-tags">
+              <span>Vue</span><span>Nuxt</span><span>动画</span>
+            </div>
+            <div class="project-actions">
+              <a class="btn" href="#">演示</a>
+              <a class="btn" href="#">源码</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="contact" class="container section reveal">
+      <h2 class="section-title">联系方式</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>保持联系</h3>
+          <p>如果你对我的作品感兴趣或想聊合作，欢迎通过下列方式联系我。</p>
+          <ul class="contact-list">
+            <li><strong>邮箱：</strong><a href="mailto:you@example.com">you@example.com</a></li>
+            <li><strong>领英：</strong><a href="#">linkedin.com/in/yourname</a></li>
+            <li><strong>GitHub：</strong><a href="https://github.com/alive-qqf">github.com/alive-qqf</a></li>
+          </ul>
+        </div>
+        <form class="contact-form" action="mailto:you@example.com" method="post" enctype="text/plain">
+          <label>姓名<input type="text" name="name" placeholder="你的姓名" required></label>
+          <label>邮箱<input type="email" name="email" placeholder="your@example.com" required></label>
+          <label>内容<textarea name="message" placeholder="写点什么..." rows="6" required></textarea></label>
+          <div class="form-actions"><button class="btn primary" type="submit">发送</button></div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> 姓名 · 简洁大方的简历模板</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
