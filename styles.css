@@ -35,7 +35,7 @@ body{
 .hero{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:start;padding:3rem 1rem}
 .hero-left h1{font-size:2.1rem;margin:.2rem 0}
 .lead{color:var(--muted);margin:.6rem 0}
-.avatar{width:96px;height:96px;border-radius:22px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 6px 20px rgba(32,50,70,0.6);margin-bottom:1rem}
+.avatar{width:96px;height:96px;border-radius:22px;object-fit:cover;box-shadow:0 6px 20px rgba(55, 104, 161, 0.6);margin-bottom:1rem;border:1px solid rgba(255,255,255,0.2);background:linear-gradient(135deg,var(--accent),var(--accent-2));display:block}
 .btn{display:inline-block;padding:.55rem .9rem;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);text-decoration:none;transition:all .18s}
 .btn:hover{transform:translateY(-4px);box-shadow:0 6px 20px rgba(5,10,20,0.6)}
 .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#07202a;border:0}
