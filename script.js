@@ -1,7 +1,31 @@
-// script.js — 处理滚动 reveal、导航与进度条
+// script.js — 处理滚动 reveal、导航、主题切换与进度条
 document.addEventListener('DOMContentLoaded', ()=>{
   // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Theme toggle
+  const body = document.body;
+  const themeToggle = document.getElementById('theme-toggle');
+  const savedTheme = localStorage.getItem('resume-theme');
+  const preferredTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  const initialTheme = savedTheme || preferredTheme;
+  const applyTheme = (theme) => {
+    const isLight = theme === 'light';
+    body.classList.toggle('theme-light', isLight);
+    body.classList.toggle('theme-dark', !isLight);
+    if (themeToggle) {
+      themeToggle.textContent = isLight ? '🌙' : '☀️';
+      themeToggle.setAttribute('aria-label', isLight ? '切换到深色模式' : '切换到浅色模式');
+    }
+    localStorage.setItem('resume-theme', theme);
+  };
+  applyTheme(initialTheme);
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = body.classList.contains('theme-light') ? 'dark' : 'light';
+      applyTheme(nextTheme);
+    });
+  }
 
   // Mobile nav toggle
   const navToggle = document.getElementById('nav-toggle');

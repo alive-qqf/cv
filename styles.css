@@ -1,14 +1,30 @@
 /* styles.css — 简洁、响应式并带有滚动/悬停动画 */
 :root{
-  --bg:#0f1724;
+  --bg-1:#071021;
+  --bg-2:#0b1830;
+  --bg-3:#132b3e;
   --card:#0b1220;
   --muted:#9aa4b2;
   --accent:#6ee7b7;
   --accent-2:#60a5fa;
   --glass: rgba(255,255,255,0.04);
   --text:#e6eef6;
+  --border: rgba(255,255,255,0.06);
   --radius:12px;
   --container:1100px;
+}
+
+body.theme-light{
+  --bg-1:#eef7ff;
+  --bg-2:#dfeeff;
+  --bg-3:#d2ebff;
+  --card:#ffffff;
+  --muted:#53657a;
+  --accent:#1e9d76;
+  --accent-2:#3f7ae8;
+  --glass: rgba(20,30,48,0.05);
+  --text:#1a2333;
+  --border: rgba(26,35,51,0.08);
 }
 
 *{box-sizing:border-box}
@@ -16,19 +32,23 @@ html,body{height:100%}
 body{
   margin:0;
   font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-  background:linear-gradient(180deg,#071021 0%, #081427 60%);
+  background:linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
   color:var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  transition:background .3s ease, color .3s ease;
 }
 .container{max-width:var(--container);margin:0 auto;padding:1.25rem}
-.site-header{position:sticky;top:0;z-index:50;backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(3,6,10,0.6), rgba(3,6,10,0.2));border-bottom:1px solid rgba(255,255,255,0.03)}
+.site-header{position:sticky;top:0;z-index:50;backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(3,6,10,0.6), rgba(3,6,10,0.2));border-bottom:1px solid var(--border)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
 .logo{font-weight:700;color:var(--text);text-decoration:none;font-size:1.05rem}
 .nav{display:flex;gap:1rem}
 .nav a{color:var(--muted);text-decoration:none;padding:.35rem .6rem;border-radius:8px;transition:all .2s}
 .nav a:hover{color:var(--text);background:var(--glass);transform:translateY(-2px)}
-.nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:1.2rem}
+.nav-toggle,.theme-toggle{display:inline-flex;align-items:center;justify-content:center;background:none;border:0;color:var(--text);font-size:1.2rem;cursor:pointer;border-radius:8px;padding:.35rem .5rem;transition:transform .2s ease, background .2s ease}
+.nav-toggle:hover,.theme-toggle:hover{background:var(--glass);transform:translateY(-1px)}
+.nav-toggle{display:none}
+.theme-toggle{margin-left:.25rem}
 .progress{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0}
 
 /* Hero */
