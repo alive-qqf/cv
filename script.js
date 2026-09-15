@@ -3,12 +3,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
   // Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Let the gold glow follow the pointer without forcing a layout update.
+  let pointerFrame = 0;
+  document.addEventListener('pointermove', (event) => {
+    if (pointerFrame) return;
+    pointerFrame = requestAnimationFrame(() => {
+      document.documentElement.style.setProperty('--mouse-x', `${event.clientX}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${event.clientY}px`);
+      pointerFrame = 0;
+    });
+  }, {passive:true});
+
   // Theme toggle
   const body = document.body;
   const themeToggle = document.getElementById('theme-toggle');
-  const savedTheme = localStorage.getItem('resume-theme');
-  const preferredTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-  const initialTheme = savedTheme || preferredTheme;
+  const savedTheme = localStorage.getItem('resume-theme-v2');
+  const initialTheme = savedTheme || 'dark';
   const applyTheme = (theme) => {
     const isLight = theme === 'light';
     body.classList.toggle('theme-light', isLight);
@@ -17,7 +27,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
       themeToggle.textContent = isLight ? '🌙' : '☀️';
       themeToggle.setAttribute('aria-label', isLight ? '切换到深色模式' : '切换到浅色模式');
     }
-    localStorage.setItem('resume-theme', theme);
+    localStorage.setItem('resume-theme-v2', theme);
   };
   applyTheme(initialTheme);
   if (themeToggle) {
